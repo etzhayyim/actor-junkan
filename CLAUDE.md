@@ -88,7 +88,7 @@ facts; junkan reads off, as disclosed hypotheses (G5), which feedback loops spin
   `regimeShiftEvent`) across txs — realizes the ADR's temporal data-model.
 - `80-data/junkan-governance/` — DataLad dataset (datoms snapshot + ledger +
   report + provenance).
-- Tests: `bash 20-actors/junkan/run_tests.sh` → 33 tests / 564 assertions green.
+- Tests: `bb 20-actors/junkan/run_tests.bb` (bb-only; sh/bash runners are prohibited).
 
 This substrate keeps junkan's analysis-only spine: G4 (no actuation, no dispatch
 path), G5 (hypothesis-only, `:junkan/hypothesis :true` on every derived datom),
