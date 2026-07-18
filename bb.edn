@@ -1,0 +1,3 @@
+{:tasks
+ {test (shell "clojure -M -m junkan.test-runner")
+  audit (load-file "scripts/audit.clj")}}

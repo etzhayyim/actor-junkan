@@ -19,7 +19,14 @@ and other actors to read. That is the whole point: 分析するだけ.
 ## ADR
 
 - ADR-2605290927 (R0 scaffold, 2026-05-29)
-- Manifest: `20-actors/junkan/manifest.jsonld`
+- Manifest: `manifest.edn`
+
+## Repository layout
+
+- `manifest.edn` and all data under `data/` are canonical EDN.
+- `src/` and `test/` contain the Clojure/CLJC observer and its tests.
+- `wire/` contains JSON/JSON-LD interoperability mirrors only.
+- Python, Go/TinyGo, and shell implementations are deprecated and absent.
 
 ## Position in the ecosystem
 
@@ -34,7 +41,7 @@ junkan is the outward, analysis-only complement of the inward self-model. It is
 
 ## Tech
 
-- **Python LangGraph** heartbeat-cadence Pregel graph (8 cells).
+- **Clojure/CLJC** analysis-only observer with deterministic heartbeat processing.
 - **datom / Datalog** data model (immutable society-stock facts + time-travel)
   on canonical **kotoba-kqe** (ADR-2605262130, Datomic-isomorphic
   EAVT/AEVT/AVET/VAET). Proprietary Datomic is **not** used (Charter Rider
@@ -55,33 +62,70 @@ until R1 (post Bootstrap-Council ratify).
 
 ## Execution Rule
 
-`junkan` is **bb-only**. Do not add or invoke `.sh` / bash / shell runners for
-this actor. Run tests with `bb 20-actors/junkan/run_tests.bb` from the repo root.
+Do not add `.sh` / bash runners. Run `clojure -M -m junkan.test-runner` and
+`bb scripts/audit.clj` from the repository root.
 
 ## India Packaged-Goods Culture Addendum
 
-`methods/consumer_culture.cljc` adds a separate aggregate-only read-off for the
+`src/junkan/methods/consumer_culture.cljc` adds a separate aggregate-only read-off for the
 question of Indian packaged goods vs loose/refill/kirana purchase. It models
 regional, language, channel, and rural/urban pressures rather than treating
 "Indians" as one culture. Positive net pressure means loose/refill/local-small-
 quantity purchase persists; negative pressure means packaged/modern-retail pull.
 
-Seed data lives in `kotoba/seed.india-packaged-goods.edn`. It is explicitly
+Seed data lives in `data/seed/seed.india-packaged-goods.edn`. It is explicitly
 representative and hypothesis-only, with counter-forces for sachets, modern
 trade, ecommerce, and language-local packaged brands.
 
 ## Country/Region Loop Actors
 
-`kotoba/ontology.country-region-loop-actors.edn` and
-`kotoba/seed.country-region-loop-actors.edn` define the repeatable actor pattern:
+`data/ontology/ontology.country-region-loop-actors.edn` and
+`data/seed/seed.country-region-loop-actors.edn` define the repeatable actor pattern:
 a world domain actor, country actors, and region actors that inherit shared
 stocks/loops while carrying local language, settlement, channel, and source
-coverage. `methods/country_region_actors.cljc` validates parent chains, required
+coverage. `src/junkan/methods/country_region_actors.cljc` validates parent chains, required
 gates, domain inheritance, and fission rules.
 
 The initial packaged-goods registry seeds `IN` plus `IN-NORTH`, `IN-SOUTH`,
 `IN-WEST`, `IN-EAST`, `IN-NORTHEAST`, and `IN-CENTRAL`, with `JP`, `US`, and
 `BR` left as designed country actors awaiting local aggregate public sources.
+The `waste-sanitation-cycle` domain (below) reuses the same registry with its
+own `world` + `IN` + 6-region actor set.
+
+## India Waste & Sanitation Cycle Addendum
+
+`src/junkan/methods/waste_sanitation.cljc` adds a separate aggregate-only read-off for
+India's municipal solid-waste **collection, source-segregation, processing,
+and recycling-market-linkage** cycle — the "system dynamics react loop" behind
+uncollected street waste, open dumping/burning, and informal waste-picker
+exclusion versus reliable collection, segregation compliance, processing
+capacity, and recycler-market linkage. It models region, language, channel,
+and rural/urban pressures, not "Indian sanitation" as one uniform condition:
+India also has ODF++/5-star SBM-U certified cities, scientific-processing
+capacity build-out, and waste-picker cooperative integration pilots, and those
+counter-forces are represented explicitly. Positive net pressure means the
+cycle is moving toward circularity (collection/segregation/processing/
+recycling); negative pressure means it is moving toward accumulation
+(uncollected/unsegregated/landfill/open-dumping).
+
+Seed data lives in `data/seed/seed.india-waste-sanitation.edn`. It is explicitly
+representative and hypothesis-only, with counter-forces for door-to-door
+collection scale-up, segregation-at-source pilots, waste-picker cooperative
+integration, legacy-dumpsite bioremediation, and civic behaviour-change
+campaigns. The `waste-sanitation-cycle` domain is registered in
+`data/ontology/ontology.country-region-loop-actors.edn` /
+`data/seed/seed.country-region-loop-actors.edn` alongside `packaged-goods-culture`,
+seeding `world` + `IN` + `IN-NORTH`/`IN-SOUTH`/`IN-WEST`/`IN-EAST`/
+`IN-NORTHEAST`/`IN-CENTRAL`.
+
+**Scope boundary (G4, analysis-only):** this addendum reads which loops are
+spinning toward circularity or accumulation and surfaces Meadows leverage
+candidates. It has no dispatch, route-optimization, or recycler-payment
+function — junkan never schedules a collection vehicle or pays a recycler.
+On-the-ground collection/sorting/recycling-business *execution*, if built, is
+a separate, Governor-gated actor's concern (robotaxi-actor pattern: proposal
++ independent Governor + append-only audit ledger), which MAY read junkan's
+findings but which junkan does not compose with or actuate (G4/G13).
 
 ## License
 

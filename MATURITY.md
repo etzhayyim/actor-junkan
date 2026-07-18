@@ -2,8 +2,9 @@
 
 ADR-2605290927 · clj-native, kotoba-Datom-native · updated 2026-06-21
 
-Execution rule: **bb-only**. `.sh` / bash / shell runners are prohibited for
-this actor; tests run via `bb 20-actors/junkan/run_tests.bb`.
+Execution rule: shell runners are prohibited. The complete substrate-native suite runs via
+`clojure -M -m junkan.test-runner` (**105 tests / 6670 assertions**); repository policy runs
+via `bb scripts/audit.clj`.
 
 ## What this substrate answers
 
@@ -17,19 +18,19 @@ this actor; tests run via `bb 20-actors/junkan/run_tests.bb`.
 
 | # | item | status |
 |---|---|---|
-| 1 | ontology (EAVT schema, 5 stocks, loops, Meadows, negative space) | ✅ `kotoba/ontology.junkan-gov.edn` |
+| 1 | ontology (EAVT schema, 5 stocks, loops, Meadows, negative space) | ✅ `data/ontology/ontology.junkan-gov.edn` |
 | 2 | global instrument seed (laws/institutions/doctrines/values) | ✅ 465 instruments · 197 jurisdictions · 4 kinds incl :value (iter 40) |
 | 3 | 誰が (enactor) on every instrument | ✅ test-enforced |
 | 4 | 経緯 (origin) on every instrument | ✅ test-enforced |
 | 5 | 関係者 (stakeholders) on every instrument | ✅ test-enforced |
 | 6 | all 5 asymmetry stocks covered | ✅ test-enforced |
 | 7 | both polarities present (widen + narrowing/balancers) | ✅ test-enforced |
-| 8 | analysis read-off (stock regimes + member-stock-grounded loops + leverage + coverage) | ✅ `methods/analyze.cljc` |
+| 8 | analysis read-off (stock regimes + member-stock-grounded loops + leverage + coverage) | ✅ `src/junkan/methods/analyze.cljc` |
 | 9 | EAVT datom emission (flagged :derived + :hypothesis) | ✅ 6755 datoms |
 | 9b | temporal era-trajectory analytic (widen/narrow force per era) | ✅ `analyze/era-trajectory` (iter 3) |
-| 9c | EAVT/AVET/VAET arrangement queries over the datoms | ✅ `methods/query.cljc` (iter 4) |
-| 10 | content-addressed findings ledger (commit-DAG, verify-chain) | ✅ `methods/kotoba.cljc` |
-| 11 | deterministic idempotent-by-content heartbeat | ✅ `methods/autorun.cljc` |
+| 9c | EAVT/AVET/VAET arrangement queries over the datoms | ✅ `src/junkan/methods/query.cljc` (iter 4) |
+| 10 | content-addressed findings ledger (commit-DAG, verify-chain) | ✅ `src/junkan/methods/kotoba.cljc` |
+| 11 | deterministic idempotent-by-content heartbeat | ✅ `src/junkan/methods/autorun.cljc` |
 | 12 | G4 analysis-only (no outward channel; by absence) | ✅ test-enforced |
 | 13 | G5 hypothesis-only (no proven causation) | ✅ test-enforced |
 | 14 | G6 aggregate-only (no person/PII attr) | ✅ test-enforced |
@@ -38,17 +39,18 @@ this actor; tests run via `bb 20-actors/junkan/run_tests.bb`.
 | 16b | continental region coverage (balance + gap detection) | ✅ `analyze/region-of` · 5 continents balanced (iter 7) |
 | 16c | transparent leverage scoring (disclosed weights + components) | ✅ `analyze/amplify-score` + `flip-score` (iter 7) |
 | 16d | stock × continent cross-tab (where each asymmetry is active) | ✅ `analyze/region-stock-matrix` (iter 8) |
-| 16e | substrate integrity checker (ontology↔seed↔region-map) | ✅ `methods/validate.cljc` · 0 errors (iter 9) |
-| 16f | generated live SCORECARD (coverage+integrity+read-off) | ✅ `methods/scorecard.cljc` → SCORECARD.md (iter 10) |
+| 16e | substrate integrity checker (ontology↔seed↔region-map) | ✅ `src/junkan/methods/validate.cljc` · 0 errors (iter 9) |
+| 16f | generated live SCORECARD (coverage+integrity+read-off) | ✅ `src/junkan/methods/scorecard.cljc` → SCORECARD.md (iter 10) |
 | 16g | leverage-by-continent (most tractable flip candidate per region) | ✅ `analyze/leverage-by-region` (iter 11) |
 | 16h | kind × polarity matrix (laws widen / doctrines narrow) | ✅ `analyze/kind-polarity-matrix` (iter 12) |
 | 17 | tests green | ✅ 65 tests / 6404 assertions |
 | 18 | live passive-data ingest (Tier-A public archives) | ⏳ R1, Council-gated |
-| 16i | as-of / regime-trajectory reader (history) | ✅ `methods/history.cljc` (iter 13) |
+| 16i | as-of / regime-trajectory reader (history) | ✅ `src/junkan/methods/history.cljc` (iter 13) |
 | 19 | kotoba-kqe live-engine binding | ⏳ R1 |
 | 20 | Murakumo-only LLM-assisted loop-naming | ⏳ R1 |
-| 21 | India packaged-goods / loose-refill retail culture system-dynamics addendum | ✅ `methods/consumer_culture.cljc` + `kotoba/seed.india-packaged-goods.edn` |
-| 22 | Country/region loop-actor design registry + validation | ✅ `methods/country_region_actors.cljc` + `kotoba/seed.country-region-loop-actors.edn` |
+| 21 | India packaged-goods / loose-refill retail culture system-dynamics addendum | ✅ `src/junkan/methods/consumer_culture.cljc` + `data/seed/seed.india-packaged-goods.edn` |
+| 22 | Country/region loop-actor design registry + validation | ✅ `src/junkan/methods/country_region_actors.cljc` + `data/seed/seed.country-region-loop-actors.edn` |
+| 23 | India municipal solid-waste collection/segregation/processing/recycling-linkage cycle system-dynamics addendum | ✅ `src/junkan/methods/waste_sanitation.cljc` + `data/seed/seed.india-waste-sanitation.edn`, registered as `waste-sanitation-cycle` domain (world/IN + 6 regions) |
 
 ## Current read-off (HYPOTHESIS — see report.md)
 
