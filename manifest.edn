@@ -16,28 +16,28 @@
  :actor/charter-rider {:rider/version "3.5" :rider/applied true}
 
  :actor/substrate
- {:ontology "20-actors/junkan/kotoba/ontology.junkan-gov.edn"
-  :seed     "20-actors/junkan/kotoba/seed.governance-asymmetry.edn"
-  :country-region-actor-ontology "20-actors/junkan/kotoba/ontology.country-region-loop-actors.edn"
-  :country-region-actor-seed "20-actors/junkan/kotoba/seed.country-region-loop-actors.edn"
+ {:ontology "data/ontology/ontology.junkan-gov.edn"
+  :seed     "data/seed/seed.governance-asymmetry.edn"
+  :country-region-actor-ontology "data/ontology/ontology.country-region-loop-actors.edn"
+  :country-region-actor-seed "data/seed/seed.country-region-loop-actors.edn"
   :dataset  "80-data/junkan-governance/"
   :methods  ["junkan_edn" "analyze" "query" "validate" "scorecard" "history" "kotoba" "autorun"
              "consumer_culture" "country_region_actors" "waste_sanitation"]}
 
  :actor/analyses
  [{:analysis/id "governance-asymmetry"
-   :ontology "20-actors/junkan/kotoba/ontology.junkan-gov.edn"
-   :seed     "20-actors/junkan/kotoba/seed.governance-asymmetry.edn"}
+   :ontology "data/ontology/ontology.junkan-gov.edn"
+   :seed     "data/seed/seed.governance-asymmetry.edn"}
   {:analysis/id "demographic-dynamics"
-   :ontology "20-actors/junkan/kotoba/ontology.junkan-demography.edn"
-   :seed     ["20-actors/junkan/kotoba/seed.china-one-child.edn"
-              "20-actors/junkan/kotoba/seed.low-fertility-societies.edn"]
+   :ontology "data/ontology/ontology.junkan-demography.edn"
+   :seed     ["data/seed/seed.china-one-child.edn"
+              "data/seed/seed.low-fertility-societies.edn"]
    :methods  ["demography"]
    :note     "China one-child policy SD read-off + KR/JP/IT/SG cross-society contrast (ADR-2605290927, 2026-06-29)"}
   {:analysis/id "waste-sanitation-cycle"
-   :ontology "20-actors/junkan/kotoba/ontology.country-region-loop-actors.edn"
-   :seed     ["20-actors/junkan/kotoba/seed.india-waste-sanitation.edn"
-              "20-actors/junkan/kotoba/seed.country-region-loop-actors.edn"]
+   :ontology "data/ontology/ontology.country-region-loop-actors.edn"
+   :seed     ["data/seed/seed.india-waste-sanitation.edn"
+              "data/seed/seed.country-region-loop-actors.edn"]
    :methods  ["waste_sanitation" "country_region_actors"]
    :note     "India municipal solid-waste collection/source-segregation/processing/recycling-market-linkage cycle SD read-off + world/IN + 6-region loop-actor registration (ADR-2605290927, 2026-07-10). ANALYSIS-ONLY: on-the-ground collection dispatch/routing/recycler-payout execution is out of junkan's scope by design (G4) and is a separate Governor-gated actor's concern (see junkan CLAUDE.md)."}]
 
