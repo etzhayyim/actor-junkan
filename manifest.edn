@@ -11,6 +11,11 @@
  :actor/purpose   "ANALYSIS-ONLY system-dynamics observer of society. Reads which feedback loops are spinning 好循環/悪循環 + Meadows leverage candidates from passive, public, AGGREGATE data — and may ONLY look, never touch (G4, no outward channel; enforced by absence). It carries MULTIPLE analysis lenses over one shared stock/flow + R/B-loop + Meadows frame. (1) governance-asymmetry: which concrete laws/institutions/doctrines/values worldwide widen or narrow the structural asymmetry between citizens (国民) and the state (政府), recording who established each (誰が), the circumstances (経緯), and the stakeholders (関係者). (2) demographic-dynamics: China's one-child policy (1979) and its reversal (単独二孩2013 → 全面二孩2015 → 三孩2021) read as a stock-flow + ~25y delay + cultural-hysteresis case of why reversing the policy did not reverse the fertility decline (small-family-norm R2 lock-in / 4-2-1 R3 squeeze / pronatal B2 overwhelmed), with a KR/JP/IT/SG cross-society contrast surfacing each society's distinct binding constraint; anti-coercion (junkan never prescribes who should reproduce; coerce-reproduction / eugenic-target unrepresentable). Everything is a disclosed HYPOTHESIS (G5), aggregate-only (G6), a resilience/leverage MAP and never a target-list or population target (G7)."
  :actor/status    :r0
  :actor/adr       "2605290927"
+ :actor/lexicons  ["com.etzhayyim.junkan.causalLoopFinding"
+                   "com.etzhayyim.junkan.leveragePointFinding"
+                   "com.etzhayyim.junkan.regimeShiftEvent"
+                   "com.etzhayyim.junkan.silenJunkanReview"
+                   "com.etzhayyim.junkan.societalStockObservation"]
  :actor/related   ["2605192100" "2605262130" "2605312345" "2605262400" "2605240200" "2605264000" "2605241500"]
 
  :actor/charter-rider {:rider/version "3.5" :rider/applied true}
