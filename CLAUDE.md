@@ -1,4 +1,4 @@
-# com-etzhayyim-junkan — CLAUDE.md
+# actor-junkan — CLAUDE.md
 
 ## Identity
 

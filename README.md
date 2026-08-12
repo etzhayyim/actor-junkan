@@ -2,6 +2,13 @@
 
 **Analysis-only societal feedback-loop observer.**
 
+Canonical repository: `etzhayyim/actor-junkan`.
+
+Junkan is an analysis organ of the Tamaki artificial organism, not an
+independent policy authority. Its append-only findings remain hypotheses for
+Council or other governed actors to review; it never prescribes, publishes,
+transacts, or actuates on Tamaki's behalf.
+
 junkan applies systems-thinking to society at large: from passive, public,
 aggregate data it continuously builds a system-dynamics model (stocks, flows,
 reinforcing/balancing causal loops) and reads off which loops are currently
