@@ -25,7 +25,7 @@
   Pure fns; deterministic; string-keyed post records (house style). Stdlib only —
   the growth (live signing/broadcast) happens actor-side on the mesh, not here.
   Clojure gotcha respected: every private helper is defined BEFORE its use."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def DISCLAIMER
   (str "【分析ミラー / systems-dynamics read-off — 分析のみ・断定なし・開示された仮説 (proven causation ではない)】 "

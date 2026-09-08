@@ -24,7 +24,7 @@
   (it has no outward channel at all) and the review pins murakumoOnlyComplianceAttested."
   (:require [clojure.test :refer [deftest is run-tests]]
             [clojure.edn :as edn]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 #?(:clj
    (do

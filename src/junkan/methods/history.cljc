@@ -8,7 +8,7 @@
   commit-DAG (kotoba.cljc) and reads, across consecutive txs, which asymmetry
   stocks (and loops) CHANGED regime (好循環⇄悪循環 — a `regimeShiftEvent` in the
   lexicon). Pure over a tx vector; read-only (G4); HYPOTHESIS (G5)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn- datoms-of [tx] (get tx ":tx/datoms"))
 

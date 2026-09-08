@@ -9,7 +9,7 @@
   pattern of the hinagata/tate family. Read-only (G4): no I/O in `check`, no
   outward channel."
   (:require [junkan.methods.analyze :as az]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (defn check
   "Verify `instruments` against `enums` (from the ontology) + the region map.

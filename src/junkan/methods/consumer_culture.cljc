@@ -8,7 +8,7 @@
   negative net pressure means standardized packaged/modern-retail purchase is
   gaining force. Every read-off is hypothesis-only."
   (:require [clojure.edn :as edn]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def stock-order
   [:cashflow-unit-size
