@@ -6,7 +6,7 @@
   required gates, domain inheritance, region fission coverage, and aggregate-only
   posture. The registry lets one pattern scale from IN to country/region actors."
   (:require [clojure.edn :as edn]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def required-gates
   #{:analysis-only

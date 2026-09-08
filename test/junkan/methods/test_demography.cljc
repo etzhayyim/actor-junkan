@@ -6,7 +6,7 @@
             [junkan.methods.demography :as d]
             [clojure.edn :as edn]
             [clojure.set :as cset]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is run-tests]]))
 
 (def seed-path "data/seed/seed.china-one-child.edn")

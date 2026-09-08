@@ -4,7 +4,7 @@
 (ns junkan.methods.test-junkan-edn
   (:require [junkan.methods.junkan-edn :as je]
             [clojure.edn :as edn]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is run-tests]]))
 
 (def seed-path "data/seed/seed.governance-asymmetry.edn")

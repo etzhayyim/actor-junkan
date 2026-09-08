@@ -29,7 +29,7 @@
    G11  leverage points are candidates (`prescription? false`); junkan NEVER
         prescribes who should reproduce (anti-coercion, §1.13 + §1.4)."
   (:require [junkan.methods.analyze :as az]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 ;; ── stock catalog (display order + labels) ───────────────────────────────────
 (def stock-order

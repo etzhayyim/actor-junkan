@@ -17,7 +17,7 @@
   junkan CLAUDE.md 'Waste & sanitation-cycle substrate' section for the
   analysis/intervention boundary."
   (:require [clojure.edn :as edn]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def stock-order
   [:collection-reliability

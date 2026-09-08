@@ -25,7 +25,7 @@
     G6  aggregate-only — instruments + institutional enactors; no private individual.
     G7  sober, non-eschatological framing in the report; no doom/ranking-to-shame.
     G11 leverage points are candidates (`prescription? false`); no directive issued."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ── stock catalog (display order + labels) ───────────────────────────────────
 (def stock-order

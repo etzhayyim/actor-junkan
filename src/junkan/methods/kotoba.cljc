@@ -17,7 +17,7 @@
   appends to a LOCAL file. There is no outward/dispatch path here (enforced by
   absence). The ledger is a read-only findings record consumed by humans / other
   actors — a resilience/leverage MAP, NEVER a target-list (G7)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [clojure.java.io :as io])))
 
 (defn add [entity attr value] [":db/add" entity attr value])

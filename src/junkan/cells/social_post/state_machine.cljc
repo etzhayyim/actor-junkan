@@ -22,7 +22,7 @@
                  and is performed via ossekai/kataribe on junkan's behalf, never junkan).
 
   Self-contained. Stdlib only. Deterministic — the seed grows on the mesh, not here."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def disclaimer
   "【分析ミラー / systems-dynamics read-off — 分析のみ・断定なし・開示された仮説 (proven causation ではない)】")

@@ -15,7 +15,7 @@
 
   Read-only (G4): no mutation, no I/O, no outward channel — pure functions over a
   datom vector. Returns plain data for humans / other actors to consume."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn- e [d] (nth d 1))
 (defn- a [d] (nth d 2))

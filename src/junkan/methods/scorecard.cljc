@@ -10,7 +10,7 @@
   pattern of the hinagata/tatara family."
   (:require [junkan.methods.analyze :as az]
             [junkan.methods.validate :as v]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (defn render
   "Pure: render the scorecard markdown from an analysis bundle + a validate result."
