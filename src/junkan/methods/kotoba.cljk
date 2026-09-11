@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — findings-ledger kotoba Datom-log writer (content-addressed).
 (ns junkan.methods.kotoba
   "kotoba.cljc — junkan 循環 append-only FINDINGS LEDGER writer

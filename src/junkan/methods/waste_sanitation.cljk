@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 (ns junkan.methods.waste-sanitation
   "System-dynamics read-off for India's municipal solid-waste collection,
   source-segregation, processing, and recycling-market-linkage cycle.

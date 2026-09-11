@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — substrate integrity checker (ontology ↔ seed ↔ region-map).
 (ns junkan.methods.validate
   "validate.cljc — junkan 循環 governance-asymmetry substrate integrity checker

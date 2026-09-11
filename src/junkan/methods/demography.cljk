@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — demographic-dynamics system-dynamics read-off (clj-native, pure stdlib).
 (ns junkan.methods.demography
   "junkan 循環 — the ANALYSIS-ONLY system-dynamics read-off over demographic policy

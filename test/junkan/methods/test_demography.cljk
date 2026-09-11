@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — demographic-dynamics read-off tests (incl. the analysis-only invariants).
-;; Run:  bb --classpath 20-actors src/junkan/methods/test_demography.cljc
+;; Run:  kbb --classpath 20-actors src/junkan/methods/test_demography.cljc
 (ns junkan.methods.test-demography
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.demography :as d]

@@ -3,8 +3,8 @@
 ADR-2605290927 · clj-native, kotoba-Datom-native · updated 2026-06-21
 
 Execution rule: shell runners are prohibited. The complete substrate-native suite runs via
-`clojure -M -m junkan.test-runner` (**105 tests / 6670 assertions**); repository policy runs
-via `bb scripts/audit.cljk`.
+`kbb -M -m junkan.test-runner` (**105 tests / 6670 assertions**); repository policy runs
+via `kbb scripts/audit.cljk`.
 
 ## What this substrate answers
 

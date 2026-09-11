@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — as-of / regime-trajectory (history) tests.
-;; Run:  bb --classpath 20-actors src/junkan/methods/test_history.cljc
+;; Run:  kbb --classpath 20-actors src/junkan/methods/test_history.cljc
 (ns junkan.methods.test-history
   (:require [junkan.methods.history :as h]
             [junkan.methods.kotoba :as k]

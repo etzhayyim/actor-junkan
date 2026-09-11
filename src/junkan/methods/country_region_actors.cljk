@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 (ns junkan.methods.country-region-actors
   "Design registry helpers for country/region system-dynamics loop actors.
 
