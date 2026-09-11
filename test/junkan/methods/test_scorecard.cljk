@@ -29,7 +29,7 @@
     (is (str/includes? md "✅ OK") "live substrate integrity is clean in the scorecard")))
 
 (deftest scorecard-is-read-only
-  (let [src (slurp "src/junkan/methods/scorecard.cljc")]
+  (let [src (slurp "src/junkan/methods/scorecard.cljk")]
     ;; the pure render carries no outward/dispatch verb (G4); only -main does I/O (spit)
     (is (nil? (re-find #"(?im)\((?:post|dispatch|send|transact!|append-tx)\b" src))
         "scorecard.cljc has no outward-channel call (G4)")))

@@ -67,28 +67,28 @@ facts; junkan reads off, as disclosed hypotheses (G5), which feedback loops spin
   structural loops · Meadows 12 levels · negative space.
 - `data/seed/seed.governance-asymmetry.edn` — global instrument seed (grows each
   `/loop`: 35 instruments · 17 jurisdictions at iteration 1).
-- `src/junkan/methods/junkan_edn.cljc` — loader/classify.
-- `src/junkan/methods/analyze.cljc` — analysis-only read-off (stock regimes + loops +
+- `src/junkan/methods/junkan_edn.cljk` — loader/classify.
+- `src/junkan/methods/analyze.cljk` — analysis-only read-off (stock regimes + loops +
   leverage candidates + coverage worklist + EAVT datoms + sober report). **No
   outward channel (G4 by absence).**
-- `src/junkan/methods/kotoba.cljc` — content-addressed append-only findings ledger
+- `src/junkan/methods/kotoba.cljk` — content-addressed append-only findings ledger
   (commit-DAG, verify-chain tamper-evident, no-server-key, local file only).
-- `src/junkan/methods/autorun.cljc` — deterministic idempotent-by-content heartbeat.
-- `src/junkan/methods/query.cljc` — read-only EAVT/AVET/VAET arrangement queries over the
+- `src/junkan/methods/autorun.cljk` — deterministic idempotent-by-content heartbeat.
+- `src/junkan/methods/query.cljk` — read-only EAVT/AVET/VAET arrangement queries over the
   findings datoms (the kotoba-kqe index model; e.g. instruments-in / stocks-by-
   regime / loops-including-stock). Read-only (G4 by absence of any write).
-- `src/junkan/methods/validate.cljc` — substrate integrity checker (ontology↔seed↔region-map
+- `src/junkan/methods/validate.cljk` — substrate integrity checker (ontology↔seed↔region-map
   consistency: 誰が/経緯/関係者 completeness, enum validity, ranges, unique ids,
   region-mapping, coverage invariants). Runnable scorecard + test-wired.
-- `src/junkan/methods/scorecard.cljc` — generates a live `SCORECARD.md` (coverage + continental
+- `src/junkan/methods/scorecard.cljk` — generates a live `SCORECARD.md` (coverage + continental
   balance + stock regimes + era trajectory + integrity verdict) so the scorecard
   never drifts from the data.
-- `src/junkan/methods/history.cljc` — as-of / regime-trajectory reader over the ledger
+- `src/junkan/methods/history.cljk` — as-of / regime-trajectory reader over the ledger
   commit-DAG: which asymmetry stocks/loops CHANGED regime (好循環⇄悪循環,
   `regimeShiftEvent`) across txs — realizes the ADR's temporal data-model.
 - `80-data/junkan-governance/` — DataLad dataset (datoms snapshot + ledger +
   report + provenance).
-- Tests: `clojure -M -m junkan.test-runner`; audit: `bb scripts/audit.clj`.
+- Tests: `clojure -M -m junkan.test-runner`; audit: `bb scripts/audit.cljk`.
 
 This substrate keeps junkan's analysis-only spine: G4 (no actuation, no dispatch
 path), G5 (hypothesis-only, `:junkan/hypothesis :true` on every derived datom),
@@ -114,7 +114,7 @@ question — *why reversing the policy did not reverse the fertility decline*
 - `data/seed/seed.china-one-child.edn` — 13 dated policy levers (誰が/経緯/関係者),
   sourcing `:representative`. polarity `:suppress` (lowers fertility / collapse-ward)
   vs `:boost` (raises / replacement-ward).
-- `src/junkan/methods/demography.cljc` — analysis-only read-off: per-stock regime + loop drive +
+- `src/junkan/methods/demography.cljk` — analysis-only read-off: per-stock regime + loop drive +
   Meadows leverage candidates + era trajectory + EAVT datoms + a sober report +
   `validate` (substrate integrity; polarity here is `:suppress`/`:boost`, so it does
   not reuse the governance `validate.cljc` which hardwires `:widen`/`:narrow`). Reuses
@@ -124,8 +124,8 @@ question — *why reversing the policy did not reverse the fertility decline*
   **cross-society contrast**: 22 levers across **KR / JP / IT / SG** (same 5-stock
   frame). Loaded alongside the China seed; `society-contrast` / `by-jurisdiction` /
   `render-contrast-report` in `demography.cljc` give the per-society read-off, and
-  `bb … src/junkan/methods/demography.cljc` prints both the China report and the contrast.
-- `test/junkan/methods/test_demography.cljc` — 12 tests (contribution sign · clean validate ·
+  `bb … src/junkan/methods/demography.cljk` prints both the China report and the contrast.
+- `test/junkan/methods/test_demography.cljk` — 12 tests (contribution sign · clean validate ·
   both polarities + all 5 stocks · analysis shape · R2/R3 vicious · top-flip = the
   one-child mandate · G4/G5/G6 datom discipline · ontology negative-space absent ·
   merged-seed validate · 5-society contrast · binding constraints differ · society
@@ -160,7 +160,7 @@ collection / source segregation / processing capacity / recycler-market linkage
 (circularity)** — the "system dynamics react loop" behind street-waste accumulation and
 public-hygiene outcomes.
 
-- `src/junkan/methods/waste_sanitation.cljc` — analysis-only read-off (8 stocks: collection-
+- `src/junkan/methods/waste_sanitation.cljk` — analysis-only read-off (8 stocks: collection-
   reliability / source-segregation / informal-worker-integration / municipal-processing-
   capacity / landfill-dependency / recycler-market-linkage / public-compliance-norm /
   regulatory-enforcement; 5 loops: R-segregation-recycler-linkage / R-collection-
@@ -178,11 +178,11 @@ public-hygiene outcomes.
   `data/ontology/ontology.country-region-loop-actors.edn` (`:domain` enum) and
   `data/seed/seed.country-region-loop-actors.edn` (`world` + `IN` + `IN-NORTH`/`IN-SOUTH`/
   `IN-WEST`/`IN-EAST`/`IN-NORTHEAST`/`IN-CENTRAL` loop-actors), alongside
-  `packaged-goods-culture` — same registry, same `src/junkan/methods/country_region_actors.cljc`
+  `packaged-goods-culture` — same registry, same `src/junkan/methods/country_region_actors.cljk`
   validation (parent chains, required gates, domain inheritance, fission rules).
-- `test/junkan/methods/test_waste_sanitation.cljc` — mirrors `test_consumer_culture.cljc` (contribution
+- `test/junkan/methods/test_waste_sanitation.cljk` — mirrors `test_consumer_culture.cljc` (contribution
   sign · analysis shape/invariants · region+language coverage · counterforces explicit ·
-  loop grounding · report rendering). `test/junkan/methods/test_country_region_actors.cljc` extended
+  loop grounding · report rendering). `test/junkan/methods/test_country_region_actors.cljk` extended
   with waste-sanitation-cycle fission + domain-inheritance tests.
 
 **Scope boundary — this is deliberately analysis-only, not the collection/recycling
@@ -219,7 +219,7 @@ The seed (all LANDED):
   analysis-only disclaimer (G7) + `server_held_key` false (no-server-key) + status `dry-run`.
   A `published` request REFUSES. Verified under `bb`: `<2 sources / server-key / published →
   refused`, valid → `drafted` with `:post/status :dry-run`, `:post/server-held-key false`.
-- **publication projection** — `src/junkan/methods/social.cljc`: projects junkan's HISTORY (on-record
+- **publication projection** — `src/junkan/methods/social.cljk`: projects junkan's HISTORY (on-record
   governance-asymmetry instruments — law/institution + 誰が定めたか/経緯/関係者) + FINDINGS
   (disclosed-hypothesis loop read-offs 好循環/悪循環 + Meadows leverage candidates) into
   `app.bsky.feed.post`-shaped dry-run posts (`draft-instrument-post` / `draft-loop-post` /
@@ -236,7 +236,7 @@ leash (ADR-2606111400), and signs its own posts. The server never signs. R0 = dr
 only; live broadcast is Council Lv6+ + operator + member/actor-signature gated (§1.12 / G11 / G13).
 
 ```text
-bb -e '(load-file "src/junkan/methods/social.cljc")'                 # projection loads green
+bb -e '(load-file "src/junkan/methods/social.cljk")'                 # projection loads green
 bb -e '(load-file "cells/social_post/state_machine.cljc")' # membrane loads green
 # operator step (zero-knowledge — needs MURAKUMO_OPERATOR_SEED + Tailscale):
 #   bb murakumo deploy kotoba.app.edn <node>

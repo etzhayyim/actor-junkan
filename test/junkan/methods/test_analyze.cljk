@@ -70,7 +70,7 @@
 (deftest g4-analysis-only
   (is (= false (get (a) "actuation_taken")) "actuation_taken false")
   ;; structural: the analyze source carries no dispatch/post/email/tx verb
-  (let [src (slurp "src/junkan/methods/analyze.cljc")
+  (let [src (slurp "src/junkan/methods/analyze.cljk")
         forbidden #"(?im)\((?:post|dispatch|send-mail|smtp|http-post|transact!|broadcast)\b"]
     (is (nil? (re-find forbidden src)) "analyze.cljc has no outward-channel call (G4 by absence)")))
 

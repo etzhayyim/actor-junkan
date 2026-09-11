@@ -70,11 +70,11 @@ until R1 (post Bootstrap-Council ratify).
 ## Execution Rule
 
 Do not add `.sh` / bash runners. Run `clojure -M -m junkan.test-runner` and
-`bb scripts/audit.clj` from the repository root.
+`bb scripts/audit.cljk` from the repository root.
 
 ## India Packaged-Goods Culture Addendum
 
-`src/junkan/methods/consumer_culture.cljc` adds a separate aggregate-only read-off for the
+`src/junkan/methods/consumer_culture.cljk` adds a separate aggregate-only read-off for the
 question of Indian packaged goods vs loose/refill/kirana purchase. It models
 regional, language, channel, and rural/urban pressures rather than treating
 "Indians" as one culture. Positive net pressure means loose/refill/local-small-
@@ -90,7 +90,7 @@ trade, ecommerce, and language-local packaged brands.
 `data/seed/seed.country-region-loop-actors.edn` define the repeatable actor pattern:
 a world domain actor, country actors, and region actors that inherit shared
 stocks/loops while carrying local language, settlement, channel, and source
-coverage. `src/junkan/methods/country_region_actors.cljc` validates parent chains, required
+coverage. `src/junkan/methods/country_region_actors.cljk` validates parent chains, required
 gates, domain inheritance, and fission rules.
 
 The initial packaged-goods registry seeds `IN` plus `IN-NORTH`, `IN-SOUTH`,
@@ -101,7 +101,7 @@ own `world` + `IN` + 6-region actor set.
 
 ## India Waste & Sanitation Cycle Addendum
 
-`src/junkan/methods/waste_sanitation.cljc` adds a separate aggregate-only read-off for
+`src/junkan/methods/waste_sanitation.cljk` adds a separate aggregate-only read-off for
 India's municipal solid-waste **collection, source-segregation, processing,
 and recycling-market-linkage** cycle — the "system dynamics react loop" behind
 uncollected street waste, open dumping/burning, and informal waste-picker
