@@ -88,7 +88,7 @@ facts; junkan reads off, as disclosed hypotheses (G5), which feedback loops spin
   `regimeShiftEvent`) across txs — realizes the ADR's temporal data-model.
 - `80-data/junkan-governance/` — DataLad dataset (datoms snapshot + ledger +
   report + provenance).
-- Tests: `clojure -M -m junkan.test-runner`; audit: `bb scripts/audit.cljk`.
+- Tests: `kbb -M -m junkan.test-runner`; audit: `kbb scripts/audit.cljk`.
 
 This substrate keeps junkan's analysis-only spine: G4 (no actuation, no dispatch
 path), G5 (hypothesis-only, `:junkan/hypothesis :true` on every derived datom),
@@ -213,7 +213,7 @@ The seed (all LANDED):
 
 - **did-web registration** — `50-infra/etzhayyim-did-web/public/actor/junkan/{did,profile}.json`
   (`verificationMethod: []` — no server-minted key, did:web trust root = TLS; the
-  `#xrpc-libp2p` peer multiaddr is assigned at `bb murakumo deploy` time when `wasmCid` is set).
+  `#xrpc-libp2p` peer multiaddr is assigned at `kbb -M:murakumo deploy` time when `wasmCid` is set).
 - **social_post membrane** — `cells/social_post/state_machine.cljc`: DRAFTS a record into a
   **dry-run** post ONLY if ≥2 public-source citations (G5) + non-adjudicating MIRROR with the
   analysis-only disclaimer (G7) + `server_held_key` false (no-server-key) + status `dry-run`.
@@ -229,15 +229,15 @@ The seed (all LANDED):
   + `on-kse etzhayyim/actor/junkan/publish`, `:requires #{:cap/kqe :cap/atproto}`).
 
 **Division of labor (zero-knowledge)**: the **planter** authors the in-repo seed (holds no
-key); the **operator** (founder) runs `bb murakumo deploy kotoba.app.edn <node>`
+key); the **operator** (founder) runs `kbb -M:murakumo deploy kotoba.app.edn <node>`
 with `MURAKUMO_OPERATOR_SEED` + Tailscale and exercises the Council gate for the first live post;
 the **actor's mesh runtime** self-generates/self-custodies its `did:key`, presents a member CACAO
 leash (ADR-2606111400), and signs its own posts. The server never signs. R0 = dry-run drafts
 only; live broadcast is Council Lv6+ + operator + member/actor-signature gated (§1.12 / G11 / G13).
 
 ```text
-bb -e '(load-file "src/junkan/methods/social.cljk")'                 # projection loads green
-bb -e '(load-file "cells/social_post/state_machine.cljc")' # membrane loads green
+kbb -e '(load-file "src/junkan/methods/social.cljk")'                 # projection loads green
+kbb -e '(load-file "cells/social_post/state_machine.cljc")' # membrane loads green
 # operator step (zero-knowledge — needs MURAKUMO_OPERATOR_SEED + Tailscale):
 #   bb murakumo deploy kotoba.app.edn <node>
 ```

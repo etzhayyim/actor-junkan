@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — datom index queries (EAVT / AVET / VAET arrangements over findings).
 (ns junkan.methods.query
   "query.cljc — read-only Datalog-style queries over junkan's findings datoms,

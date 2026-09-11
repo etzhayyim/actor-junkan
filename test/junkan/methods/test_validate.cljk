@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — substrate integrity-checker tests.
-;; Run:  bb --classpath 20-actors src/junkan/methods/test_validate.cljc
+;; Run:  kbb --classpath 20-actors src/junkan/methods/test_validate.cljc
 (ns junkan.methods.test-validate
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.validate :as v]

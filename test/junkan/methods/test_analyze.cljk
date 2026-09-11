@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — analysis read-off tests (incl. the analysis-only invariants).
-;; Run:  bb --classpath 20-actors src/junkan/methods/test_analyze.cljc
+;; Run:  kbb --classpath 20-actors src/junkan/methods/test_analyze.cljc
 (ns junkan.methods.test-analyze
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.analyze :as az]

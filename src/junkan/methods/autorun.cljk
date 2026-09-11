@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — autonomous heartbeat: analyze → append findings to the local ledger.
 (ns junkan.methods.autorun
   "autorun.cljc — junkan 循環 deterministic heartbeat (ADR-2605290927).

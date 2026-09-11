@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — as-of / regime-trajectory reader over the findings ledger.
 (ns junkan.methods.history
   "history.cljc — junkan 循環 as-of / HISTORY reader over the findings ledger

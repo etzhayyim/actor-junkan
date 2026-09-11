@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — live SCORECARD generator (coverage + integrity + read-off digest).
 (ns junkan.methods.scorecard
   "scorecard.cljc — junkan 循環 governance-asymmetry SCORECARD generator

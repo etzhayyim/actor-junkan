@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — heartbeat tests (idempotent-by-content, resume-safe).
-;; Run:  bb --classpath 20-actors src/junkan/methods/test_autorun.cljc
+;; Run:  kbb --classpath 20-actors src/junkan/methods/test_autorun.cljc
 (ns junkan.methods.test-autorun
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.autorun :as ar]

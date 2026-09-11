@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 (ns junkan.methods.consumer-culture
   "System-dynamics read-off for Indian packaged-goods vs loose/refill retail culture.
 

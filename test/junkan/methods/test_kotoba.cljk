@@ -1,6 +1,6 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; junkan 循環 — findings-ledger (content-addressed commit-DAG) tests.
-;; Run:  bb --classpath 20-actors src/junkan/methods/test_kotoba.cljc
+;; Run:  kbb --classpath 20-actors src/junkan/methods/test_kotoba.cljc
 (ns junkan.methods.test-kotoba
   (:require [junkan.methods.kotoba :as k]
             [clojure.java.io :as io]

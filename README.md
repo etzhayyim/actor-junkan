@@ -69,8 +69,8 @@ until R1 (post Bootstrap-Council ratify).
 
 ## Execution Rule
 
-Do not add `.sh` / bash runners. Run `clojure -M -m junkan.test-runner` and
-`bb scripts/audit.cljk` from the repository root.
+Do not add `.sh` / bash runners. Run `kbb -M -m junkan.test-runner` and
+`kbb scripts/audit.cljk` from the repository root.
 
 ## India Packaged-Goods Culture Addendum
 
