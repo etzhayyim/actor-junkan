@@ -62,7 +62,7 @@
 
 ;; ── read-only (G4): query.cljc carries no mutation/outward verb ──────────────
 (deftest g4-read-only
-  (let [src (slurp "src/junkan/methods/query.cljc")]
+  (let [src (slurp "src/junkan/methods/query.cljk")]
     (is (nil? (re-find #"(?im)\((?:spit|append-tx|transact!|post|dispatch|send)\b" src))
         "query.cljc has no write/outward call (G4 read-only by absence)")))
 
