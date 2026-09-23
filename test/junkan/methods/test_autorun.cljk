@@ -6,7 +6,7 @@
             [junkan.methods.autorun :as ar]
             [junkan.methods.kotoba :as k]
             [clojure.java.io :as io]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def seed-path "data/seed/seed.governance-asymmetry.edn")
 (defn- is* [] (je/instruments seed-path))

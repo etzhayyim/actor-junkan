@@ -1,5 +1,5 @@
 (ns junkan.methods.test-country-region-actors
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [junkan.methods.country-region-actors :as cra]))
 
 (def seed-path "data/seed/seed.country-region-loop-actors.edn")

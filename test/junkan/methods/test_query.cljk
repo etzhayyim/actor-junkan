@@ -5,7 +5,7 @@
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.analyze :as az]
             [junkan.methods.query :as q]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def seed-path "data/seed/seed.governance-asymmetry.edn")
 (defn- ds [] (let [is (je/instruments seed-path)] (az/datoms is (az/analyze is))))

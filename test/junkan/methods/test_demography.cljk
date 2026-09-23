@@ -7,7 +7,7 @@
             [clojure.edn :as edn]
             [clojure.set :as cset]
             [kotoba.lang.text :as str]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def seed-path "data/seed/seed.china-one-child.edn")
 (def societies-path "data/seed/seed.low-fertility-societies.edn")

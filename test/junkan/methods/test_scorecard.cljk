@@ -8,7 +8,7 @@
             [junkan.methods.scorecard :as sc]
             [clojure.edn :as edn]
             [kotoba.lang.text :as str]
-            [clojure.test :refer [deftest is run-tests]]))
+            [kotoba.test :refer [deftest is run-tests]]))
 
 (def seed-path "data/seed/seed.governance-asymmetry.edn")
 (def onto-path "data/ontology/ontology.junkan-gov.edn")

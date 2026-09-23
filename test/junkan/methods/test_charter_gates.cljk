@@ -22,7 +22,7 @@
   Reads canonical EDN lexicons with string keys. It weakens no gate; it asserts them.
   Touches neither the substrate-wide no-server-key nor Murakumo-only — junkan holds no key
   (it has no outward channel at all) and the review pins murakumoOnlyComplianceAttested."
-  (:require [clojure.test :refer [deftest is run-tests]]
+  (:require [kotoba.test :refer [deftest is run-tests]]
             [clojure.edn :as edn]
             [kotoba.lang.text :as str]))
 

@@ -1,5 +1,5 @@
 (ns junkan.test-runner
-  (:require [clojure.test :as test]
+  (:require [kotoba.test :as test]
             [junkan.methods.test-analyze]
             [junkan.methods.test-autorun]
             [junkan.methods.test-charter-gates]
