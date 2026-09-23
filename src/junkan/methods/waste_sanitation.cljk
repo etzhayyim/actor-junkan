@@ -16,7 +16,7 @@
   execution, or worker-dispatch decisions are out of junkan's scope — see the
   junkan CLAUDE.md 'Waste & sanitation-cycle substrate' section for the
   analysis/intervention boundary."
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.lang.edn :as edn]
             [kotoba.lang.text :as str]))
 
 (def stock-order

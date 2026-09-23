@@ -4,7 +4,7 @@
 (ns junkan.methods.test-demography
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.demography :as d]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             [clojure.set :as cset]
             [kotoba.lang.text :as str]
             [kotoba.test :refer [deftest is run-tests]]))

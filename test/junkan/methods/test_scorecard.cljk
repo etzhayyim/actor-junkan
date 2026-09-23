@@ -6,7 +6,7 @@
             [junkan.methods.analyze :as az]
             [junkan.methods.validate :as v]
             [junkan.methods.scorecard :as sc]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             [kotoba.lang.text :as str]
             [kotoba.test :refer [deftest is run-tests]]))
 

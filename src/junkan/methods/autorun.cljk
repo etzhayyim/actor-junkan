@@ -19,7 +19,7 @@
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.analyze :as az]
             [junkan.methods.kotoba :as k]
-            #?(:clj [clojure.edn :as edn])))
+            #?(:clj [kotoba.lang.edn :as edn])))
 
 (defn beat
   "Run one heartbeat. opts:

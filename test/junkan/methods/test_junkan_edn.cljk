@@ -3,7 +3,7 @@
 ;; Run:  kbb --classpath 20-actors src/junkan/methods/test_junkan_edn.cljc
 (ns junkan.methods.test-junkan-edn
   (:require [junkan.methods.junkan-edn :as je]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             [kotoba.lang.text :as str]
             [kotoba.test :refer [deftest is run-tests]]))
 
