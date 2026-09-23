@@ -1,5 +1,5 @@
 (ns junkan.methods.test-consumer-culture
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [junkan.methods.consumer-culture :as cc]))
 
 (def seed-path "data/seed/seed.india-packaged-goods.edn")
