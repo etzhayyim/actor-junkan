@@ -5,7 +5,7 @@
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.autorun :as ar]
             [junkan.methods.kotoba :as k]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [kotoba.test :refer [deftest is run-tests]]))
 
 (def seed-path "data/seed/seed.governance-asymmetry.edn")
