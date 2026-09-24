@@ -5,7 +5,7 @@
   (:require [junkan.methods.junkan-edn :as je]
             [junkan.methods.demography :as d]
             [kotoba.lang.edn :as edn]
-            [clojure.set :as cset]
+            [kotoba.lang.coll :as cset]
             [kotoba.lang.text :as str]
             [kotoba.test :refer [deftest is run-tests]]))
 
