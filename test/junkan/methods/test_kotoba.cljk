@@ -3,7 +3,7 @@
 ;; Run:  kbb --classpath 20-actors src/junkan/methods/test_kotoba.cljc
 (ns junkan.methods.test-kotoba
   (:require [junkan.methods.kotoba :as k]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [kotoba.test :refer [deftest is run-tests]]))
 
 (defn- tmp [] (str (System/getProperty "java.io.tmpdir")

@@ -6,7 +6,7 @@
             [junkan.methods.kotoba :as k]
             [junkan.methods.junkan-edn :as je]
             [junkan.methods.analyze :as az]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [kotoba.test :refer [deftest is run-tests]]))
 
 (defn- tmp [] (str (System/getProperty "java.io.tmpdir")
