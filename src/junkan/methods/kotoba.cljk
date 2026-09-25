@@ -18,7 +18,7 @@
   absence). The ledger is a read-only findings record consumed by humans / other
   actors — a resilience/leverage MAP, NEVER a target-list (G7)."
   (:require [kotoba.bytes :as kbytes] [kotoba.lang.text :as str]
-            #?(:clj [clojure.java.io :as io])))
+            #?(:clj [kotoba.io :as io])))
 
 (defn add [entity attr value] [":db/add" entity attr value])
 
@@ -125,8 +125,8 @@
    (do
      (defn append-tx [tx log-path]
        (let [f (io/file log-path)]
-         (when-let [p (.getParentFile f)] (.mkdirs p))
-         (when-not (.exists f)
+         (when-let [p (io/parent-file f)] (io/mkdirs p))
+         (when-not (io/exists? f)
            (spit f (str ";; junkan 循環 — FINDINGS LEDGER (append-only, content-addressed "
                         "EAVT commit-DAG of governance-asymmetry findings). Generated; DO NOT "
                         "hand-edit. A resilience/leverage MAP, never a target-list. ADR-2605290927.\n")))
@@ -135,7 +135,7 @@
 
      (defn read-log [log-path]
        (let [f (io/file log-path)]
-         (if-not (.exists f) []
+         (if-not (io/exists? f) []
                  (->> (str/split-lines (slurp f))
                       (map str/trim)
                       (remove #(or (empty? %) (str/starts-with? % ";")))
